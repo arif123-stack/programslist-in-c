@@ -83,3 +83,98 @@ int main()
     }
     return 0;
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,sum=0,temp,rem,i,c=1,p=1;
+    printf("Enter the number");
+    scanf("%d",&n);
+    temp=n;
+    while(temp!=0)
+    {
+        rem=temp%10;
+        sum=sum*10+rem;
+        temp=temp/10;
+    }
+    temp=sum;
+    sum=0;
+    while(temp!=0)
+    {
+        rem=temp%10;
+        for(i=1;i<=c;i++)
+        {
+            p=p*rem;
+        }
+        sum=sum+p;
+        temp=temp/10;
+        c++;
+        p=1;
+    }
+    if(sum==n)
+        {
+            printf("the number is disarium %d",sum);
+        }
+     else{
+        printf("the number is not disarium %d",sum);
+     }
+}
+//------------------------------------------------------------------
+//Program to Check Happy number
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int num,temp,rem,sum=0;
+    printf("Enter the number :");
+    scanf("%d",&num);
+    temp=num;
+    while(sum!=1 && sum!=4)
+    {
+        sum=0;
+        while(temp!=0)
+        {
+          rem=temp%10;
+          sum=sum+rem*rem;
+          temp=temp/10;
+        }
+        temp=sum;
+    }
+    if(sum==1)
+    {
+        printf("the number is happy number %d",sum);
+    }
+    else{
+        printf("the number is not  happy number %d",sum);
+    }
+}
+
+//------------------------------------------------------------------------
+//Program to determine whether a given number is a Harshad number
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int num,rem,temp,sum=0;
+    printf("Enter any number");
+    scanf("%d",&num);
+    temp=num;
+    while(temp!=0)
+    {
+       rem=temp%10;
+       sum=sum+rem;
+       temp=temp/10;
+    }
+    if(num%sum==0)
+    {
+        printf("%d the number is Harshad number or Niven Number",num);
+    }
+    else
+    {
+       printf("%d the number is Harshad number or Niven Number",num);
+    }
+}
+//------------------------------------------------------------------
+//Program to print all Disarium numbers between 1 to 100
+
