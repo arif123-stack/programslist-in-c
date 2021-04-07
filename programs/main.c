@@ -177,4 +177,89 @@ int main()
 }
 //------------------------------------------------------------------
 //Program to print all Disarium numbers between 1 to 100
+#include<stdio.h>
+#include<conio.h>
+int length(int n){
+    int length=0;
+    while(n!=0){
+        length+=1;
+        n/=10;
+    }
+    return length;
+}
+int sum(int n){
+    int sum = 0, rem = 0;
+    int len = length(n);
+
+    while(n > 0){
+        rem = n%10;
+        sum = sum + pow(rem,len);
+        n = n/10;
+        len--;
+    }
+    return sum;
+}
+int main(){
+    int result=0;
+    printf("Disarium number betweem 1 and 100");
+    for(int i=1;i<=100;i++){
+        result=sum(i);
+        if(result==i)
+            printf("%d\n",i);
+    }
+    return 0;
+}
+//----------------------------------------------------------------
+#include <stdio.h>
+ int isHappyNumber(int num){
+    int rem = 0, sum = 0;
+     while(num > 0){
+        rem = num%10;
+        sum = sum + (rem*rem);
+        num = num/10;
+    }
+    return sum;
+}
+int main()
+{
+
+    printf("List of happy numbers between 1 and 100: \n");
+    for(int i = 1; i <= 100; i++){
+        int result = i;
+        while(result != 1 && result != 4){
+            result = isHappyNumber(result);
+        }
+          if(result == 1)
+            printf("%d ", i);
+    }
+}
+//----------------------------------------------------------------------
+//Program to print all Pronic numbers between 1 and 100
+#include<stdio.h>
+#include <stdbool.h>
+bool pronicnumber(int n){
+    bool flag=false;
+    for(int j=1;j<=n;j++)
+    {
+        if(j*(j+1)==n)
+        {
+            flag=true;
+            break;
+        }
+    }
+    return flag;
+}
+int main(){
+    printf("Pronic numbers between 1 and 100: \n");
+    for(int i=1;i<=100;i++)
+    {
+        if(pronicnumber(i))
+        {
+            print("%d",i);
+        }
+    }
+    return 0;
+}
+//-----------------------------------------------------------------
+
 
