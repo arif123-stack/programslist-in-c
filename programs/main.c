@@ -251,6 +251,8 @@ bool pronicnumber(int n){
     }
     return flag;
 }
+
+//_--__-------------------
 int main(){
     printf("Pronic numbers between 1 and 100: \n");
     for(int i=1;i<=100;i++)
