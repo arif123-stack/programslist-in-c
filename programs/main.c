@@ -255,7 +255,7 @@ bool pronicnumber(int n){
 //_--__-------------------
 int main(){
     printf("Pronic numbers between 1 and 100: \n");
-    for(int i=1;i<=100;i++)
+    for(int i=1;i<=100
     {
         if(pronicnumber(i))
         {
